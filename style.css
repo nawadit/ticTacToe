@@ -1,0 +1,43 @@
+.cols{
+  width: 100px;
+}
+.rows{
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+.border{
+  border: 2px dotted brown;
+}
+.grid{
+  width: fit-content;
+  margin: auto;
+}
+#one{
+ border-top: none;
+ border-left: none;
+}
+#two{
+  border: none;
+}
+#three{
+  border-top: none;
+ border-right: none;
+}
+#four{
+  border: none;
+}
+#six{
+  border: none;
+}
+#seven{
+  border-bottom: none;
+  border-left: none;
+}
+#eight{
+  border: none;
+}
+#nine{
+  border-bottom: none;
+  border-right: none;
+}
