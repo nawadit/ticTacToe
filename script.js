@@ -7,16 +7,16 @@ matrix = [["@", "@", "@"], ["@", "@", "@"], ["@", "@", "@"]]
 document.getElementById('reset').addEventListener('click', function () { location.reload(true); })
 
 function checkWin() {
-    let winner = "@"
-    if (matrix[0][0] == matrix[0][1] && matrix[0][1] == matrix[0][2]) { console.log("condition 0"); winner = matrix[0][0] }
-    else if (matrix[1][0] == matrix[1][1] && matrix[1][1] == matrix[1][2]) { console.log("condition 1"); winner = matrix[1][0] }
-    else if (matrix[2][0] == matrix[2][1] && matrix[2][1] == matrix[2][2]) { console.log("condition 2"); winner = matrix[2][0] }
-    else if (matrix[0][0] == matrix[1][0] && matrix[1][0] == matrix[2][0]) { console.log("condition 4"); winner = matrix[0][0] }
-    else if (matrix[0][1] == matrix[1][1] && matrix[1][1] == matrix[2][1]) { console.log("condition 5"); winner = matrix[0][1] }
-    else if (matrix[0][2] == matrix[1][2] && matrix[1][2] == matrix[2][2]) { console.log("condition 6"); winner = matrix[0][2] }
-    else if (matrix[0][0] == matrix[1][1] && matrix[1][1] == matrix[2][2]) { console.log("condition 7"); winner = matrix[0][0] }
-    else if (matrix[0][2] == matrix[1][1] && matrix[1][1] == matrix[2][0]) { console.log("condition 8"); winner = matrix[0][2] }
-    if(!(winner=="@")){
+    let winner;
+    if (matrix[0][0] == matrix[0][1] && matrix[0][1] == matrix[0][2] && (matrix[0][0]==1 || matrix[0][0]==0)) { console.log("condition 0"); winner = matrix[0][0] }
+    else if (matrix[1][0] == matrix[1][1] && matrix[1][1] == matrix[1][2] && (matrix[1][0]==1 || matrix[1][0]==0)) { console.log("condition 1"); winner = matrix[1][0] }
+    else if (matrix[2][0] == matrix[2][1] && matrix[2][1] == matrix[2][2] && (matrix[2][0]==1 || matrix[2][0]==0)) { console.log("condition 2"); winner = matrix[2][0] }
+    else if (matrix[0][0] == matrix[1][0] && matrix[1][0] == matrix[2][0] && (matrix[0][0]==1 || matrix[0][0]==0)) { console.log("condition 4"); winner = matrix[0][0] }
+    else if (matrix[0][1] == matrix[1][1] && matrix[1][1] == matrix[2][1] && (matrix[0][1]==1 || matrix[0][1]==0)) { console.log("condition 5"); winner = matrix[0][1] }
+    else if (matrix[0][2] == matrix[1][2] && matrix[1][2] == matrix[2][2] && (matrix[0][2]==1 || matrix[0][2]==0)) { console.log("condition 6"); winner = matrix[0][2] }
+    else if (matrix[0][0] == matrix[1][1] && matrix[1][1] == matrix[2][2]&& (matrix[0][0]==1 || matrix[0][0]==0)) { console.log("condition 7"); winner = matrix[0][0] }
+    else if (matrix[0][2] == matrix[1][1] && matrix[1][1] == matrix[2][0]&& (matrix[0][2]==1 || matrix[0][2]==0)) { console.log("condition 8"); winner = matrix[0][2] }
+    if((winner==0 )||( winner == 1)){
         if(winner==1){winner = "X"}
         else if (winner == 0){winner = "O"}
         setTimeout(function(){alert(`${winner} won!!!`);},500) 
@@ -36,7 +36,7 @@ function buttonClicked(id) {
         row--;
         col--;
 
-        // console.log(`row is ${row} and col is ${col}`)
+        console.log(`row is ${row} and col is ${col}`)
         if (playerOne) {
             clicked.innerText = "X"
             playerOne = false
