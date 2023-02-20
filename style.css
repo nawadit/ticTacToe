@@ -11,6 +11,11 @@ body {
     font-weight: lighter;
     text-shadow: 0px 1px 5px #e8e8e8;
     margin: 10vh 0px;
+    transition: 0.5s;
+}
+#heading:hover{
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .box {
@@ -21,12 +26,37 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 20px;
+    transition: 0.5s;
 }
+.box:hover{
+    transform: scale(1.04);
+    background-color: #e8e8e8;
+}
+.box:active{
+    transform: scale(0.9);
+}
+/*
+.borderNone{
+    border: none;
+}
+.borderTop{
+    border-top: none;
+}
+.borderBottom{
+    border-bottom: none;
+}
+.borderLeft{
+    border-left: none;
+}
+.borderRight{
+    border-right: none;
+} */
 
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 20px, 0px;
+    gap: 3px;
 }
 
 #reset{
