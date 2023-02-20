@@ -1,27 +1,69 @@
-var playerOne = true;
-var playsCount = 0;
-var box = [];
-var winner
 
+clickedBoxes = []
+var playerOne = true
+var playsCount=0;
+matrix = [["@","@","@"],["@","@","@"],["@","@","@"]]
 
-function buttonClicked(id) {
-    var clicked = document.getElementById(id)
-    console.log(clicked)
-    if (box.includes(id)==0) {
-        box.push(id);
+document.getElementById('reset').addEventListener('click', function () {location.reload(true);})
+
+function checkWin(){
+    var winner = "@"
+   if (matrix[0][0]==matrix[0][1]==matrix[0][2]){console.log("condition 0") ; winner = matrix[0][0]}
+   else if (matrix[1][0]==matrix[1][1]==matrix[1][3]){console.log("condition 1") ; winner = matrix[1][0]}
+   else if (matrix[2][0]==matrix[2][1]==matrix[2][2]){console.log("condition 2") ; winner = matrix[2][0]}
+   else if (matrix[0][0]==matrix[1][0]==matrix[2][0]){console.log("condition 4") ; winner = matrix[0][0]}
+   else if (matrix[0][1]==matrix[1][1]==matrix[2][1]){console.log("condition 5") ; winner = matrix[0][1]}
+   else if (matrix[0][2]==matrix[1][2]==matrix[2][2]){console.log("condition 6") ; winner = matrix[0][2]}
+   else if (matrix[0][0]==matrix[1][1]==matrix[2][2]){console.log("condition 7") ; winner = matrix[0][0]}
+   else if (matrix[0][2]==matrix[1][1]==matrix[2][0]){console.log("condition 8") ; winner = matrix[0][2]}
+   else{}
+    console.log(winner)
+   if(winner == 1){
+    console.log("X won")
+    alert("Game Over");
+   }
+   else if (winner == 0){
+    console.log("O won")
+    alert("Game Over")
+   }
+}
+
+function buttonClicked(id){
+    var clicked = document.getElementById(id);
+    if(!clickedBoxes.includes(id)){
         playsCount++;
-        if (playerOne == 1) {
-            clicked.innerText = "X"
-            playerOne = 0
+        // console.log(clicked.id);
+        clickedBoxes.push(id);
+        var row = parseInt(id/10);
+        var col = id%10;
+        row--;
+        col--;
+       
+        // console.log(`row is ${row} and col is ${col}`)
+        if(playerOne){
+            clicked.innerText="X"
+            playerOne = false
+            matrix[row][col] = 1;
+           
         }
-        else if (playerOne == 0) {
-            clicked.innerText = "o"
-            playerOne = 1
-        }
-        
+        else if (!playerOne){
+            clicked.innerText="O"
+            playerOne = true
+            matrix[row][col] = 0;
 
+        }
+        console.log(matrix[0])
+        console.log(matrix[1])
+        console.log(matrix[2])
+       
+       
     }
-    else{
-        alert("Already filled!!")
+    else if (clickedBoxes.includes(id)){
+        alert('Already clicked!!!');
     }
+
+    if(playsCount>=5){checkWin()}
+    
+    
+    
 }

@@ -2,30 +2,29 @@
 
 <head>
     <title>
-
+        grid
     </title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class ="grid">
-        <div class ="rows ">
-            <div  onclick ="buttonClicked(this.id)" id = "one"class ="cols border"></div>
-            <div  onclick ="buttonClicked(this.id)" id = "two" class ="cols border"></div>
-            <div  onclick ="buttonClicked(this.id)" id = "three"class ="cols border"></div>
-        </div>
-        <div class ="rows ">
-            <div  onclick ="buttonClicked(this.id)" id = "four"class ="cols border"></div>
-            <div  onclick ="buttonClicked(this.id)" id = "five"class ="cols border"></div>
-            <div  onclick ="buttonClicked(this.id)" id = "six"class ="cols border"></div>
-        </div>
-        <div class ="rows ">
-            <div  onclick ="buttonClicked(this.id)" id = "seven"class ="cols border"></div>
-            <div  onclick ="buttonClicked(this.id)" id = "eight"class ="cols border"></div>
-            <div  onclick ="buttonClicked(this.id)" id = "nine"class ="cols border"></div>
-        </div>
+    <div id="heading">Tic-Tac-Toe</div>
+    <div class="container">
+        <div onclick="buttonClicked(this.id)" class="box" id="11"></div>
+        <div onclick="buttonClicked(this.id)" class="box" id="12"></div>
+        <div onclick="buttonClicked(this.id)" class="box" id="13"></div>
+        <div onclick="buttonClicked(this.id)" class="box" id="21"></div>
+        <div onclick="buttonClicked(this.id)" class="box" id="22"></div>
+        <div onclick="buttonClicked(this.id)" class="box" id="23"></div>
+        <div onclick="buttonClicked(this.id)" class="box" id="31"></div>
+        <div onclick="buttonClicked(this.id)" class="box" id="32"></div>
+        <div onclick="buttonClicked(this.id)" class="box" id="33"></div>
     </div>
+    <button id="reset">Reset</button>
     <script src="script.js"></script>
 </body>
 
