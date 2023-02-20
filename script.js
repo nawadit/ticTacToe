@@ -19,7 +19,7 @@ function checkWin() {
     if((winner==0 )||( winner == 1)){
         if(winner==1){winner = "X"}
         else if (winner == 0){winner = "O"}
-        setTimeout(function(){alert(`${winner} won!!!`);},500) 
+        setTimeout(function(){alert(`${winner} won!!!`);},100) 
         console.log(winner+"won!!!")
         setTimeout(function(){location.reload(true);},1000)
         }
